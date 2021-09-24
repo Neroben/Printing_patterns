@@ -4,21 +4,12 @@ import "fmt"
 
 func main() {
 	max := 10
-	for i := 1; i <= max; i++ {
-		var nLeft int
-		if max-i%2 == 0 {
-			nLeft = (max - i) / 2
-
-		} else {
-			nLeft = (max - i) / 2
+	for i := 0; i <= max; i++ {
+		for j := 0; j < max-i; j++ {
+			fmt.Print(" ")
 		}
-		nRight := max - nLeft - i
-		for j := 1; j <= max; j++ {
-			if j <= nLeft || j >= max-nRight {
-				fmt.Print("  ")
-			} else {
-				fmt.Print(" * ")
-			}
+		for j := 0; j < i; j++ {
+			fmt.Print(" *")
 		}
 		fmt.Println()
 	}
